@@ -1,16 +1,12 @@
 import Users from './pages/Users';
-import Movies from './pages/Movies';
+import News from './pages/News';
 import Home from "./pages/Home";
 import User from './pages/User';
 
-export default [
+const routes = [
     {
         path: '/',
         component: Home
-    },
-    {
-        path: '/movies',
-        component: Movies
     },
     {
         path: '/users',
@@ -19,5 +15,11 @@ export default [
     {
         path: '/users/:id', //User의 {id} 이름과 일치
         component: User
+    },
+    {
+        path: '/:category?',
+        component: News
     }
 ];
+
+export default routes;

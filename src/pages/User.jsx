@@ -6,7 +6,7 @@ import {useParams} from 'react-router-dom';
 function User(){
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const {id} = useParams();
+    const {id} = useParams(); //비구조화 할당으로 id 변수에 useParams의 객체를 할당
 
     useEffect(()=>{
         axios.get('https://jsonplaceholder.typicode.com/users/' + id) //해당 데이터 접근이 필요
@@ -15,7 +15,7 @@ function User(){
             setUser(response.data);
             setLoading(false);
         });
-    },[]);
+    },[id]);
 
     const userDetail = loading ? <Spinner /> : (
         <div>
