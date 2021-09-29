@@ -6,7 +6,7 @@ import Spinner from "../components/Spinner";
 import Categories from "../components/Categories";
 
 const NewsBlock = styled.div`
-    width: 1000px;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -23,6 +23,7 @@ function News(){
         const query = category === 'all' ? '' : `&category=${category}`;
         axios.get(`https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=20c23dec1ea547029e0860a6f5ad0fef`)
             .then(response=>{
+                //console.log(response.data);
                 setArticles(response.data.articles);
                 setLoading(false);
             });
@@ -34,7 +35,7 @@ function News(){
     return(
         <>
             <h1>News</h1>
-            <Categories category={category} onSelect={onSelect}/>
+            <Categories onSelect={onSelect}/>
             <NewsBlock>
                 {articles.map(article=> (
                     <NewsList key={article.url} article={article} category={category}></NewsList>

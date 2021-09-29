@@ -2,9 +2,16 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import routes from "./routes";
+import styled from "styled-components";
+
+const Block = styled.div`
+  width: 80%;
+  margin: auto;
+`;
 
 function App() {
   return (
+    <Block>
     <Router>
       <Navbar />
 
@@ -20,6 +27,7 @@ function App() {
         })}
       </Switch>
     </Router>
+    </Block>
   );
 }
 

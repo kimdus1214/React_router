@@ -33,28 +33,23 @@ const categories = [
 
 ];
 
-function Categories({category, onSelect}){
+function Categories({onSelect}){
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
-                    {categories.map(cate=>(
-                        <li className="nav-item">
-                            <NavLink 
-                                to={`/${cate.name}`}
-                                className="nav-link"
-                                activeClassName="active"
-                                active={category === cate.name}
-                                onClick={()=>onSelect(cate.name)}
-                                key={cate.name}
-                                >{cate.text}
-                            </NavLink>
-                        </li>
-                    ))                        
-                    }                    
-                </ul>
-            </div>
-        </nav>
+        <ul className="nav nav-tabs">
+            {categories.map(cate=>(
+                <li className="nav-item active" key={cate.name}>
+                    <NavLink 
+                        to={`/${cate.name}`}
+                        className="nav-link"
+                        activeClassName="active"
+                        onClick={()=>onSelect(cate.name)}
+                        >{cate.text}
+                    </NavLink>
+                </li>
+            ))                        
+            }    
+        </ul>
+
     );
 }
 
