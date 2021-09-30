@@ -7,6 +7,11 @@ import Categories from "../components/Categories";
 
 const NewsBlock = styled.div`
     width: 80%;
+    margin: 50px auto;
+`;
+
+const NewsWrap = styled.div`
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -33,16 +38,16 @@ function News(){
     if(loading) return <Spinner />
     if(!articles) return null; //렌더링 과정에 오류 발생 방지
     return(
-        <>
+        <NewsBlock>
             <h1>News</h1>
             <Categories onSelect={onSelect}/>
-            <NewsBlock>
+            <NewsWrap>
                 {articles.map(article=> (
                     <NewsList key={article.url} article={article} category={category}></NewsList>
                 ))}
-            </NewsBlock>
+            </NewsWrap>
             
-        </>
+        </NewsBlock>
     );
 }
 

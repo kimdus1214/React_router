@@ -2,6 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Spinner from "../components/Spinner";
 import {useParams} from 'react-router-dom';
+import styled from "styled-components";
+
+const UserBlock = styled.div`
+    width:80%;
+    margin: 50px auto;
+`;
 
 function User(){
     const [user, setUser] = useState(null);
@@ -26,10 +32,10 @@ function User(){
     )
 
     return(
-        <>
+        <UserBlock>
             <h1>User Info</h1>
             {userDetail}
-        </>
+        </UserBlock>
     );
 }
 
