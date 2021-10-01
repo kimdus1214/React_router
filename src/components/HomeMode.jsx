@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+// import { useTheme } from '../context/themeContext';
 
 const HomeBlock = styled.div`
     width:100%;
@@ -20,10 +21,13 @@ const HomeWrap = styled.div`
     }
     p{
         font-size: 1.2rem;
+        margin-top: 15px;
     }
 `;
 
-function HomeMode({currentMode}){
+function HomeMode({themeMode}){
+    const currentMode = themeMode === 'dark' ? '다크' : '라이트' 
+    
     return(
         <HomeBlock>
             <HomeWrap>

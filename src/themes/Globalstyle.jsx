@@ -4,9 +4,9 @@ import reset from "styled-reset";
 export const GlobalStyle = createGlobalStyle`
     ${reset}
     body{
-        background: {( { theme } ) => theme.bgColor};
-        color: {( { theme } ) => theme.textColor};
-        border: {( { theme } ) => theme.borderColor};
+        background: ${({ theme }) => theme.bgColor};
+        color: ${( { theme } ) => theme.textColor};
+        border: 1px soild ${( { theme } ) => theme.borderColor};
     }
 `;
 

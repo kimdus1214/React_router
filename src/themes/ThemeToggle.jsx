@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ToggleBlock = styled.ul`
+const ToggleBlock = styled.div`
 position: fixed;
 z-index: 999999;
 bottom: 4%;
@@ -19,21 +19,14 @@ border:1px solid #ddd;
 border-radius: 20px;
 padding: 10px 15px;
 box-sizing: border-box;
-
-li{
-  width:50px;
-  text-align: center;
-  line-heigth: 48px;
-  font-size: 1rem;
-  margin-right:5px;
-  color: ${props => props.theme.textColor};
-}
+color: ${props => props.theme.textColor};
+cursor: pointer;
 `;
 
-function ThemeToggle({toggle, mode}) {
+function ThemeToggle({toggleTheme, themeMode}) {
     return (
-        <ToggleBlock onClick={toggle} mode={mode}>
-          {mode === 'dark' ? '다크모드' : '라이트모드'}
+        <ToggleBlock onClick={toggleTheme} mode={themeMode}>
+          {themeMode === 'dark' ? '다크모드' : '라이트모드'}
         </ToggleBlock>
       );
 }
