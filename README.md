@@ -1,21 +1,25 @@
-# React Router(라우터/ 데이터 받아오기/ 테마모드)
-[App] : 출력할 컴포넌트 불러옴   
-[routes]: 컴포넌트를 불러와서 한 파일로 내보낼 수 있도록 만들어줌   
-[Home]: 테마모드 적용(라이트/다크)   
+# React Page
+router, axios, Styled-components의 ThemeProvider 사용하여 페이지를 구현하였습니다.   
+<br />   
+
+### ✔ 파일설명   
+- [App] : 출력할 컴포넌트 불러옴   
+- [routes]: 컴포넌트와 path를 모아서 내보낼 수 있도록 따로 관리   
+- [Home]: 테마모드 적용(라이트/다크)   
 ```
 [themes 폴더]
 - Theme : 라이트, 다크 모드에 해당하는 스타일 지정해서 내보내줌   
 - Globalstyle : Styled Components에서 제공하는 createGlobalStyle 함수로 전역 스타일 지정   
 - ThemeToggle : 테마 모드가 변경 될 수 있도록 props를 받아옴   
 ```
-[News]: 탭 메뉴 클릭시 해당 기사의 데이터를 불러옴   
-[Users] : 렌더링 될 때 데이터 값을 불러옴   
-[UserList] : 데이터 값들 중 name에 해당하는 데이터를 출력해줌   
-[User]: 서브 라우터 정보   
+- [News]: 탭 메뉴 클릭시 해당 기사의 데이터를 불러옴   
+- [Users] : 렌더링 될 때 데이터 값을 불러옴   
+- [UserList] : 데이터 값들 중 name에 해당하는 데이터를 출력해줌   
+- [User]: 서브 라우터 정보   
 <br />
 
 
-## 🤩useParams
+### ✔ useParams
 - URL 인자들의 key/value(키/값) 짝들의 객체를 반환한다.   
 - 현재 라우트의 match.params에 접근하기 위해 사용한다.   
 - 라우트 컴포넌트에 path속성에서 URL을 파라미터로써 값을 받는 객체를 useParams()를 통해 접근할 수 있다.

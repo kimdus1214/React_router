@@ -43,7 +43,7 @@ function News(){
             <Categories onSelect={onSelect}/>
             <NewsWrap>
                 {articles.map(article=> (
-                    <NewsList key={article.url} article={article} category={category}></NewsList>
+                    <NewsList key={article.url} article={article}></NewsList>
                 ))}
             </NewsWrap>
             
